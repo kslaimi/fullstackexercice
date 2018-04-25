@@ -1,0 +1,8 @@
+<router-outlet></router-outlet>
+Welcome
+<div *ngIf="isAuthenticated">
+	<p>
+		You logged in <em>{{user.email}}!</em>
+	</p>
+	<button class="btn btn-primary" (click)="logOut()">Log out</button>
+</div>

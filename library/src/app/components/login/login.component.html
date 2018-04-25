@@ -1,0 +1,19 @@
+<router-outlet></router-outlet>
+<h1>Log in</h1>
+<hr>
+<br>
+<form class="example-form" (ngSubmit)="onSubmit()" #myForm="ngForm">
+	<mat-form-field class="example-full-width"> <input
+		matInput [(ngModel)]="user.email" name="email" id="email" type="email"
+		placeholder="email"> </mat-form-field>
+
+	<mat-form-field class="example-full-width"> <input
+		matInput [(ngModel)]="user.password" type='password' name="password"
+		id="password" placeholder="password"> </mat-form-field>
+	<div *ngIf="errorMessage">
+		<div class="alert alert-danger" role="alert">{{errorMessage}}</div>
+		<br />
+	</div>
+
+	<button type="submit" md-raised-button>Submit</button>
+</form>
