@@ -15,8 +15,8 @@ public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@RequestBody User user) throws Exception {
-		if (user == null) {
-			throw new Exception(String.format("User information needed"));
+		if (user == null || (user.getEmail() == null && user.getPassword() == null)) {
+			throw new Exception(String.format("User information is missed!!"));
 		}
 		if (user.getPassword() == null || user.getPassword().length() == 0) {
 			return "{ \"error\": \"Missing password\" }";
